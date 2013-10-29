@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Week05_RollDice</title>
+        <script src="angular.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Khan_Week05_RollDice</h1>
+        <div ng-controller='diceRolls'>
+            <p>Click to roll the number of dice</p>
+            <button ng-click="rollD6()">Roll D6</button>
+            <p>One Six Face Dice Rolled: {{dice1}}</p>
+            <button ng-click="roll2D6()">Roll 2D6</button>
+            <p>Two Six Face Dice Rolled: {{dice1}}, {{dice2}}</p>
+            <button ng-click="roll3D6()">Roll 3D6</button>
+            <p>Three Six Face Dice Rolled: {{dice1}}, {{dice2}}, {{dice3}}</p>
+            <button ng-click="rollD4()">Roll D4</button>
+            <p>One Four Face Dice Rolled: {{dice4}}</p>
+            <button ng-click="rollD10()">Roll D10</button>
+            <p>One Ten Face  Dice Rolled: {{dice5}}</p>
+            <button ng-click="rollD20()">Roll D20</button>
+            <p>One Twenty Face  Dice Rolled:  {{dice6}}</p>
+            <p><br /><strong>TOTAL Score: {{total}}</strong></p>
+        </div>
+    </body>
+</html>
