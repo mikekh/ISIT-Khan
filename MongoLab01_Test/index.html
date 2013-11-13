@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html ng-app="elvenApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Elvenware Test Project</title>
+        <script src="angular.js"></script>
+        <script src="angular-resource.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Data from DB and JSON file</h1>
+        
+        <div ng-controller="MyController">
+            <h3>Rows in DB: {{herosLength}}</h3>        		
+        	<ul>
+    			<li ng-repeat="hero in heros">
+    				<p>Hero's Name: {{hero.getHeroName()}}</p>
+    				<p>Hero's Health: {{hero.getHeroHealth()}}</p>
+    			</li>
+    		</ul>
+    		
+			        		
+            <div ng-bind-html-unsafe="hint"> </div>
+            
+            <h3>Here is the JSON retreived from the server: </h3>
+            
+            <p>Village Name: {{data.name}}</p>   
+            <p>Village Health: {{data.health}}</p>    
+            <p>Village Hitpoints: {{data.hitpoints}}</p>    
+            <p>Village Damage: {{data.damage}}</p>  
+            
+            <h3>CHARLIE -- How is that we can get JSON date WITHOUT STARTING the server: </h3>           
+        </div>
+    </body>
+</html>
