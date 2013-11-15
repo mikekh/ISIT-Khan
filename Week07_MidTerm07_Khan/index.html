@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="elfPlayer">
+<head>
+    <title>Khan MidTerm </title>
+    <link rel="shortcut icon" href="Assets/favicon.png">
+    <link href="index.css" rel="stylesheet" type="text/css" />    
+    <script src="Library/angular.js"></script>
+    <script src="Library/angular-resource.js"></script>
+	<script src="Library/crafty.js"></script>	
+	<script src="Source/GameCore/Actors.js"></script>
+	<script src="Source/GameCore/Grid.js"></script>	
+	<script src="Source/GameCore/Player.js"></script>
+	<script src="Source/GameCore/Scenes.js"></script>
+	<script src="Source/GameCore/Village.js"></script>
+	<script src="Source/Characters.js"></script>
+	<script src="Source/ElfGame.js"></script>
+	<script src="Source/ElfPlayer.js"></script>	
+	<script src="Source/DataAccess/DBdata/HeroMod.js"></script> 
+	<script src="Source/DataAccess/JSONdata/data.json"></script> 
+			      
+</head>
+<body>
+    <div id="gameBoard">
+        
+    </div>
+    
+    <div id="textDisplay" ng-controller="ElfController">
+        <p>EvenGame05</p>
+        <p>{{name}}</p>        
+        <p>{{eventNote}}</p>
+        <p>{{encounterHeroMessage}}</p>
+        <p>{{encounterMessage}}</p>
+        <p>{{encounterVillageHealthMessage}}</p>
+        <button ng-click="goLeft()">Left</button>
+        <button ng-click="stopMove()">Stop</button>
+        <p>Move Messages</p>
+        <select size=3 ng-model="crazyFoo" ng-options="msg for msg in moveMessages"> </select><br>
+        <p>Debug Messages</p>
+        	<select size=3 ng-model="crazyBar" ng-options="message for message in debugMessages"> </select><br>
+            <!-- ul ng-repeat="debugMessage in debugMessages track by $index">			
+                <li>{{debugMessage}}</li>
+            </ul -->   
+                    
+    </div>
+    <br style="clear:both;"/>
+    
+    <div id="infoDisplay" ng-controller="ElfController">  
+        <h3>DB Hero Info</h3>
+           <p>Hero Name: {{people.hero.name}}</p> 
+           <p>Hero Health: {{people.hero.health}}</p> 
+           <p>Hero HitPoints: {{people.hero.hitPoints}}</p> 
+           <p>Hero Damage: {{people.hero.damage}}</p> 
+        <br />
+        <h3>JSON Tower Info</h3>
+           <h2>Does not work ask Charlie</h2>
+           <p>Tower Name: {{elfgame.towers[0].name}}</p> 
+           <p>Tower Health: {{elfgame.towers[1].health}}</p> 
+           <p>Tower HitPoints: {{elfgame.tower.hitPoints}}</p> 
+           <p>Tower Damage: {{elfgame.tower.damage}}</p> 
+    </div> 
+</body>
+</html>
