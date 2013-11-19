@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="elfPlayer">
+<head>
+    <title>Khan MidTerm </title>
+    <link rel="shortcut icon" href="Assets/favicon.png">
+    <link href="index.css" rel="stylesheet" type="text/css" /> 
+    <script src="Library/angular.js"></script>
+    <script src="Library/angular-resource.js"></script>
+	<script src="Library/crafty.js"></script>	
+	<script src="Source/GameCore/Actors.js"></script>
+	<script src="Source/GameCore/Grid.js"></script>	
+	<script src="Source/GameCore/Player.js"></script>
+	<script src="Source/GameCore/Scenes.js"></script>
+	<script src="Source/GameCore/Village.js"></script>
+	<script src="Source/Characters.js"></script>
+	<script src="Source/ElfGame.js"></script>
+	<script src="Source/ElfPlayer.js"></script>	
+	<script src="Source/DataAccess/DBdata/HeroMod.js"></script> 
+</head>
+<body>
+    <div id="gameBoard">
+        
+    </div>
+    
+    <div id="textDisplay" ng-controller="ElfController">
+        <p>ElvenGame14  {{name}}</p>
+        <p>{{eventNote}}</p>
+        
+        <button ng-click="goLeft()">Left</button>
+        <button ng-click="stopMove()">Stop</button>
+        <p>Move Messages</p>
+        
+        <select size=3 ng-model="crazyFoo" ng-options="msg for msg in moveMessages"> </select><br>
+        <p>Debug Messages</p>
+        	<select size=3 ng-model="crazyBar" ng-options="message for message in debugMessages"> </select><br>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="infoDisplay" ng-controller="ElfController">
+        <h3>Broadcast Messages</h3>
+            <p>{{encounterHeroMessage}}</p>
+            <p>{{encounterVillageHealthMessage}}</p>
+            <p>{{encounterMessage}}</p>
+    </div>
+    
+    <div class="infoDisplay" ng-controller="ElfController">  
+        <h3>DB Hero Info</h3>
+           <p>Hero Name: {{people.hero.name}}</p> 
+           <p>Hero Health: {{people.hero.health}}</p> 
+           <p>Hero HitPoints: {{people.hero.hitPoints}}</p> 
+           <p>Hero Damage: {{people.hero.damage}}</p> 
+    </div> 
+    
+    <div class="infoDisplay" ng-controller="ElfController">
+        <h3>JSON Tower Info</h3>
+           <h4>via Message Broadcasts</h4>
+           <p>{{towerName}}</p> 
+           <p>{{towerHealth}}</p> 
+           <p>{{towerHitpoints}}</p> 
+           <p>{{towerDamage}}</p> 
+    </div>
+    
+</body>
+</html>
