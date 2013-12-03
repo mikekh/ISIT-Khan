@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Khan_Week10_AngularJson</title>
+        <link rel="shortcut icon" href="favicon.png">
+        <script src="Library/angular.js"></script>
+        <script src="Source/MusicMod.js"></script>
+        <script src="indexJSON.js"></script>
+    </head>
+    <body>
+        <h1>Khan_Week10_AngularJson</h1>
+        
+        <div ng-controller="MyController">
+        	<p>This project retrieves a small amount of JSON from
+        		a node server.</p>
+            <div ng-bind-html-unsafe="hint"> </div>
+            
+            <button ng-click='loadJson()'>Load Data</button>
+            
+            <p>Here is the JSON retreived from the server: </p>
+            
+            <p>All data: {{data}}</p>
+            
+            <ul>
+        		<li ng-repeat="music in data"><strong>Musician</strong>: {{music.musician}} <strong>Album:</strong> {{music.album}}</li>        			
+        	</ul>
+        	
+        	Find: <input type="text" ng-model="toFind"> 
+        	<button ng-click='findmusician()'>Find Musician</button>
+        	<button ng-click='findAlbum()'>Find Album</button>
+        	<br />
+        	<p>  {{retVal}}</p>
+        </div>
+    </body>
+</html>
