@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Khan_Week10_AngularModule</title>
+        <script src="Library/angular.js"></script>
+        <script src="Source/MusicMod.js"></script>
+        <script src="Source/BookMod.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Khan_Week10_AngularModule</h1>
+        
+        <div ng-controller="MyController">
+        	<p>This project retrieves a small amount of JSON from
+        		a node server.</p>
+            <div ng-bind-html-unsafe="hint"> </div>
+           
+            <p>Here is the JSON retreived from the server: </p>
+            
+            <button ng-click='loadMusic()'>Load Music Data</button>
+            <p>All data: {{data}}</p>
+            
+            <ul>
+        		<li ng-repeat="music in data"><strong>Musician</strong>: {{music.musician}} <strong>Album:</strong> {{music.album}}</li>        			
+        	</ul>
+        	
+        	Find: <input type="text" ng-model="toFind"> 
+        	<button ng-click='findmusician()'>Find Musician</button>
+        	<button ng-click='findAlbum()'>Find Album</button>
+        	<br />
+        	<p>  {{retVal}}</p>
+        	
+            <button ng-click='loadBook()'>Load Book Data</button>
+            <p>All data: {{data2}}</p>
+            
+            <ul>
+        		<li ng-repeat="book in data2"><strong>Author</strong>: {{book.author}} <strong>Book:</strong> {{book.title}}</li>        			
+        	</ul>
+        	
+        	Find: <input type="text" ng-model="toFind"> 
+        	<button ng-click='findAuthor()'>Find Author</button>
+        	<button ng-click='findTile()'>Find Book</button>
+        	<br />
+        	<p>  {{retVal}}</p>
+        </div>
+    </body>
+</html>
