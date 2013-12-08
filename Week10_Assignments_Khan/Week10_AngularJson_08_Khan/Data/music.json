@@ -1,0 +1,20 @@
+[{
+	"musician": "Beatles", 
+	"album": "Yellow Submarine"
+},
+{
+	"musician": "Jefferson Starship", 
+	"album": "Red Octopus"
+},
+{
+	"musician": "The Doors", 
+	"album": "L.A. Woman"
+},
+{
+	"musician": "Jimi Hendrix", 
+	"album": "Kiss the Sky"
+},
+{
+	"musician": "Carlos Santana", 
+	"album": "Shaman"
+}]
